@@ -2,41 +2,71 @@
 
 function playBlackjack() {
 $deck = [
-[
-'suit' => 'diamonds',
-'face' => '2',
-'score' => 2
-],
-[
-'suit' => 'diamonds',
-'face' => '3',
-'score' => 3
-],
-[
-'suit' => 'diamonds',
-'face' => '4',
-'score' => 4
-],
-[
-'suit' => 'diamonds',
-'face' => '5',
-'score' => 5
-],
-[
-'suit' => 'diamonds',
-'face' => '6',
-'score' => 6
-],
-[
-'suit' => 'diamonds',
-'face' => '7',
-'score' => 7
-],
-[
-'suit' => 'diamonds',
-'face' => 'Jack',
-'score' => 10
-]
+    [
+        'suit' => 'diamonds',
+        'face' => '2',
+        'score' => 2
+    ],
+    [
+        'suit' => 'diamonds',
+        'face' => '3',
+        'score' => 3
+    ],
+    [
+        'suit' => 'diamonds',
+        'face' => '4',
+        'score' => 4
+    ],
+    [
+        'suit' => 'diamonds',
+        'face' => '5',
+        'score' => 5
+    ],
+    [
+        'suit' => 'diamonds',
+        'face' => '6',
+        'score' => 6
+    ],
+    [
+        'suit' => 'diamonds',
+        'face' => '7',
+        'score' => 7
+    ],
+    [
+        'suit' => 'diamonds',
+        'face' => '8',
+        'score' => 8
+    ],
+    [
+        'suit' => 'diamonds',
+        'face' => '9',
+        'score' => 9
+    ],
+    [
+        'suit' => 'diamonds',
+        'face' => '10',
+        'score' => 10
+    ],
+    [
+        'suit' => 'diamonds',
+        'face' => 'Jack',
+        'score' => 10
+    ],
+    [
+    'suit' => 'diamonds',
+    'face' => 'Queen',
+    'score' => 10
+    ],
+    [
+        'suit' => 'diamonds',
+        'face' => 'king',
+        'score' => 10
+    ],
+    [
+        'suit' => 'diamonds',
+        'face' => 'ace',
+        'score' => '11'
+    ]
 ];
 
 shuffle($deck);
