@@ -1,5 +1,28 @@
 <?php
 
+function createDeck(): array {
+    $suits = ['Diamonds','Hearts','Spades','Clubs'];
+    $faces = ['1','2','3','4','5','6','7','8','9','10','Jack','Queen','King','Ace'];
+    $scores = [1,2,3,4,5,6,7,8,9,10,10,10,10,11];
+    foreach($suits as $suit) {
+        $deck = array_fill_keys($suits, $suit);
+    }
+
+
+    // foreach($suits as $suit) {
+    //         $deck[] = array('suit' => $suit);
+    //     foreach($faces as $face) {
+    //         $deck[] = array('face' => $face);
+    //         foreach($scores as $score) {
+    //             $deck[] = array("score" => $score);
+    //         }
+    //     }
+    // }
+
+    var_dump($deck);
+    return $deck;
+
+}
 function playBlackjack() {
 $deck = [
     [
@@ -53,9 +76,9 @@ $deck = [
         'score' => 10
     ],
     [
-    'suit' => 'diamonds',
-    'face' => 'Queen',
-    'score' => 10
+        'suit' => 'diamonds',
+        'face' => 'Queen',
+        'score' => 10
     ],
     [
         'suit' => 'diamonds',
