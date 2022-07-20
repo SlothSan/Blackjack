@@ -5,7 +5,10 @@ function createDeck(): array {
     $faces = ['1','2','3','4','5','6','7','8','9','10','Jack','Queen','King','Ace'];
     $scores = [1,2,3,4,5,6,7,8,9,10,10,10,10,11];
     foreach($suits as $suit) {
-        $deck = array_fill_keys($suits, $suit);
+       foreach ($faces as $face) {
+           $deck[] = $suit;
+           $deck[] = $face;
+       }
     }
 
 
