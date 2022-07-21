@@ -32,28 +32,32 @@ function createDeck(array $suits, array $cards): array {
     return $deck;
 }
 
-function playBlackjack(array $deck) {
-
+function drawCards(array $deck): array {
+    $drawnCards = [];
     shuffle($deck);
-    $playerCardOne = array_pop($deck);
-    $playerCardTwo = array_pop($deck);
-    $computerCardOne = array_pop($deck);
-    $computerCardTwo = array_pop($deck);
+    for($i = 4; $i > 0; $i--){
+        $drawnCards[] = array_pop($deck);
+    }
+    return $drawnCards;
+}
 
-    $playerCards = [];
-    $computerCards = [];
-    array_push($playerCards, $playerCardOne, $playerCardTwo);
-    array_push($computerCards, $computerCardOne, $computerCardTwo);
+function getScores(array $drawnCards): array {
+    $scores[0] = $drawnCards[0]['score'];
+    $scores[1] = $drawnCards[1]['score'];
+    $scores[2] = $drawnCards[2]['score'];
+    $scores[3] = $drawnCards[3]['score'];
+    return $scores;
+}
 
-    $playerCardType = 'Players first card was ' . $playerCardOne['face'] . ' of ' . $playerCardOne['suit'] . ' and there second card was ' . $playerCardTwo['face'] . ' of ' . $playerCardTwo['suit'];
-    $computerCardType = 'Computer first card was ' . $computerCardOne['face'] . ' of ' . $computerCardOne['suit'] . ' and there second card was ' . $computerCardTwo['face'] . ' of ' . $computerCardTwo['suit'];
 
-    echo "<p>$playerCardType</p>";
-    echo "<p>$computerCardType</p>";
 
-    $playerScore = $playerCards[0]['score'] + $playerCards[1]['score'];
-    $computerScore = $computerCards[0]['score'] + $computerCards [1]['score'];
-
+function playBlackjack(array $suits, array $cards) {
+    $drawnCards = drawCards(createDeck($suits,$cards));
+    echo "<p>Players first card was " . $drawnCards[0]['card'] . " and their second card was " . $drawnCards[1]['card'] . "</p>";
+    echo "<p>Computers first card was " . $drawnCards[2]['card'] . " and their second card was " . $drawnCards[3]['card'] . "</p>";
+    $scores = getScores($drawnCards);
+    $playerScore = ($scores[0] + $scores[1]);
+    $computerScore = ($scores[2] + $scores[3]);
     echo '<p> Player score is: ' . $playerScore . '</p>';
     echo '<p> Computer score is: ' . $computerScore . '</p>';
 
@@ -70,6 +74,6 @@ function playBlackjack(array $deck) {
     }
 }
 
-playBlackjack(createDeck($suits,$cards));
+playBlackjack($suits, $cards);
 
 
